@@ -6,7 +6,7 @@ import random
 import os
 from mysql.connector import connection
 from flask_cors import CORS
-from workzeug.middleware.proxy_fix import ProxyFix
+from werkzeug.middleware.proxy_fix import ProxyFix
 from flask_bcrypt import Bcrypt
 from cmail import send_mail
 from stoken import endata, dndata
