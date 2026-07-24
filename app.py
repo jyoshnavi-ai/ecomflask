@@ -48,7 +48,7 @@ Session(app)
 mydb = connection.MySQLConnection(
     host="localhost",
     user="flaskuser",
-    password="Jyoshnavi@2005",
+    password="admin",
     db="ecom29"
 )
 
