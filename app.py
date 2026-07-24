@@ -29,7 +29,7 @@ ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'webp', 'gif', 'png'}
 
 app = Flask(__name__)
 
-app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, y_host=1)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 app.config['PREFERRED_URL_SCHEME'] = 'https'
 app.permanent_session_lifetime=timedelta(days=1)
 CORS(app, supports_credentials=True)
@@ -45,12 +45,11 @@ app.config['MAX_CONTENT_LENGTH'] = 6 * 1024 * 1024
 
 Session(app)
 
-
 mydb = connection.MySQLConnection(
-    user='flaskuser',
-    host='localhost',
-    password='@2005',
-    db='ecom29'
+    host="localhost",
+    user="flaskuser",
+    password="@2005",
+    db="ecom29"
 )
 
 client = razorpay.Client(auth=('rzp_test_TEuDHI8Wd0eKZt', 'BielZhhW3kKLOPlpalRPnrJk'))
